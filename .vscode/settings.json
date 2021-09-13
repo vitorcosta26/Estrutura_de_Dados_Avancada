@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "Java/Arvore/Arvore Generica/src/arvore",
-        "Java/Arvore/Arvore Binaria/src/arvore_binaria"
+        "Java/Arvore/Arvore Binaria/src/arvore_binaria",
+        "Java/Arvore/Arvore Binaria/src"
     ]
 }
