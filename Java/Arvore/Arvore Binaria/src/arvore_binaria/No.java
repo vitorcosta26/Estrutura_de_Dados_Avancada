@@ -1,4 +1,4 @@
-package arvore;
+package arvore_binaria;
 
 public class No<T> {
 	

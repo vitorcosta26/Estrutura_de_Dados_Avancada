@@ -1,10 +1,10 @@
-package arvore;
+package arvore_binaria;
 
-public class Arvore<T extends Comparable<T>> {
+public class ArvoreBinaria<T extends Comparable<T>> {
 	
 	private No<T> raiz;
 	
-	public Arvore() {
+	public ArvoreBinaria() {
 		super();
 		this.raiz = null;
 	}

@@ -1,9 +1,9 @@
-package arvore;
+package arvore_binaria;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Arvore<Integer> arvore = new Arvore<>();
+		ArvoreBinaria<Integer> arvore = new ArvoreBinaria<>();
 		
 		arvore.adicionar(10);
 		arvore.adicionar(8);
