@@ -1,4 +1,4 @@
-from ArvoreBinaria import *
+from arvore_binaria import ArvoreBinaria
 
 arvore = ArvoreBinaria()
 
@@ -73,7 +73,7 @@ print("Árvore")
 arvore.get_arvore(10)
 
 print("\n")
-print("Árvore inveetida")
+print("Árvore invertida")
 arvore.get_arvore_invertida(10)
 
 print("\n")
