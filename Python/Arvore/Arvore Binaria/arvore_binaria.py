@@ -1,4 +1,4 @@
-from no import No
+from No import No
 
 class ArvoreBinaria:
     def __init__(self):
