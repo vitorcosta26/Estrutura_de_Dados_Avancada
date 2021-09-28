@@ -74,7 +74,7 @@ class ArvoreBinaria:
                     pai.direito = atual.direito
         
         else:
-            sucessor = self.nosucessor(atual)
+            sucessor = self.noSucessor(atual)
             if atual == self.raiz:
                 self.raiz = sucessor
             else:
@@ -86,18 +86,18 @@ class ArvoreBinaria:
         
         return True
 
-    def nosucessor(self, apaga):
-        paidosucessor = apaga
+    def noSucessor(self, apaga):
+        paiDoSucessor = apaga
         sucessor = apaga
         atual = apaga.direito
         
         while atual != None:
-            paidosucessor = sucessor
+            paiDoSucessor = sucessor
             sucessor = atual
             atual = atual.esquerdo
             
         if sucessor != apaga.direito:
-            paidosucessor.esquerdo = sucessor.direito
+            paiDoSucessor.esquerdo = sucessor.direito
             sucessor.direito = apaga.direito
         
         return sucessor
