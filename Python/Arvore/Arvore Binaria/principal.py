@@ -73,6 +73,10 @@ print("Árvore")
 arvore.get_arvore(10)
 
 print("\n")
+print("Árvore inveetida")
+arvore.get_arvore_invertida(10)
+
+print("\n")
 print("Remover")
 arvore.remover(9)  # Folha
 arvore.remover(5)  # 1 filho
