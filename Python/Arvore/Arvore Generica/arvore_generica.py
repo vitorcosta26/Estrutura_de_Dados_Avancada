@@ -35,12 +35,11 @@ class Arvore:
         return len(self.filhos)
     
     def get_altura(self):
-        altura = 0
-        ancestral = self.pai
-        while ancestral:
-            altura += 1
-            ancestral = ancestral.pai
-        return altura
+        if self.filhos:
+            for filho in self.filhos:
+                return 1 + filho.get_altura()
+        else:
+            return 0
     
     def get_profundidade(self):
         profundidade = 0
