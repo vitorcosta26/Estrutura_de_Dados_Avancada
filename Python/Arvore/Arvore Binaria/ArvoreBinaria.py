@@ -196,3 +196,17 @@ class ArvoreBinaria:
             self.posOrder(elemento.esquerdo)
             self.posOrder(elemento.direito)
             print(elemento.elemento,end=" ")
+    
+    def get_arvore(self, elemento):
+        atual = self.get_elemento(elemento)
+        espacos = " " * atual.nivel * 2
+        prefixo = espacos + "|_" if atual.pai else ""
+        print(prefixo + str(atual.elemento))
+        if atual.esquerdo != None and atual.direito != None:
+            self.get_arvore(atual.esquerdo.elemento)
+            self.get_arvore(atual.direito.elemento)
+        elif atual.esquerdo != None or atual.direito != None:
+            if atual.esquerdo != None:
+                self.get_arvore(atual.esquerdo.elemento)
+            elif atual.direito != None:
+                self.get_arvore(atual.direito.elemento)

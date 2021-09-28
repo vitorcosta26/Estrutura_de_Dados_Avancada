@@ -69,6 +69,10 @@ print("Pre Order")
 arvore.preOrder(arvore.raiz)
 
 print("\n")
+print("Árvore")
+arvore.get_arvore(10)
+
+print("\n")
 print("Remover")
 arvore.remover(9)  # Folha
 arvore.remover(5)  # 1 filho
