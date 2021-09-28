@@ -1,4 +1,4 @@
-from No import No
+from no import No
 
 class ArvoreBinaria:
     def __init__(self):
@@ -217,10 +217,10 @@ class ArvoreBinaria:
         prefixo = espacos + "|_" if atual.pai else ""
         print(prefixo + str(atual.elemento))
         if atual.esquerdo != None and atual.direito != None:
-            self.get_arvore_invertida(atual.direito.elemento)
-            self.get_arvore_invertida(atual.esquerdo.elemento)
+            self.get_arvore(atual.direito.elemento)
+            self.get_arvore(atual.esquerdo.elemento)
         elif atual.esquerdo != None or atual.direito != None:
             if atual.esquerdo != None:
-                self.get_arvore_invertida(atual.esquerdo.elemento)
+                self.get_arvore(atual.esquerdo.elemento)
             elif atual.direito != None:
-                self.get_arvore_invertida(atual.direito.elemento)
+                self.get_arvore(atual.direito.elemento)
