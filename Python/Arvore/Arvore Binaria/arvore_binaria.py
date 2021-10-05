@@ -1,4 +1,4 @@
-from No import No
+from no import No
 
 class ArvoreBinaria:
     def __init__(self):
@@ -57,7 +57,7 @@ class ArvoreBinaria:
         
         elif atual.direito == None:
             if atual == self.raiz:
-                self.root = atual.esquerdo
+                self.raiz = atual.esquerdo
             else:
                 if filho_esquerdo:
                     pai.esquerdo = atual.esquerdo
