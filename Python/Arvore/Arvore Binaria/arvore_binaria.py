@@ -1,10 +1,14 @@
 from no import No
 
+
 class ArvoreBinaria:
     def __init__(self):
         self.raiz = No(None, None, None, None, None)
         self.raiz = None
-    
+
+    def get_raiz(self):
+        return self.raiz.elemento
+
     def inserir(self, elemento):
         novo = No(elemento, None, None, None, None)
         nivel = 0
@@ -43,9 +47,10 @@ class ArvoreBinaria:
             else:
                 atual = atual.direito
                 filho_esquerdo = False
+            nivel = atual.nivel
             if atual == None:
                 return False
-        
+
         if atual.esquerdo == None and atual.direito == None:
             if atual == self.raiz:
                 self.raiz = None
@@ -54,52 +59,59 @@ class ArvoreBinaria:
                     pai.esquerdo = None
                 else:
                     pai.direito = None
-        
+
         elif atual.direito == None:
             if atual == self.raiz:
                 self.raiz = atual.esquerdo
+                self.raiz.nivel = 0
             else:
+                atual.esquerdo.nivel = nivel
                 if filho_esquerdo:
                     pai.esquerdo = atual.esquerdo
                 else:
                     pai.direito = atual.esquerdo
-        
+
         elif atual.esquerdo == None:
             if atual == self.raiz:
                 self.raiz = atual.direito
+                self.raiz.nivel = 0
             else:
+                atual.direito.nivel = nivel
                 if filho_esquerdo:
                     pai.esquerdo = atual.direito
                 else:
                     pai.direito = atual.direito
-        
+
         else:
             sucessor = self.noSucessor(atual)
             if atual == self.raiz:
+                #sucessor.nivel = 0
                 self.raiz = sucessor
+                self.raiz.nivel = 0
             else:
+                sucessor.nivel = nivel
                 if filho_esquerdo:
                     pai.esquerdo = sucessor
                 else:
                     pai.direito = sucessor
             sucessor.esquerdo = atual.esquerdo
-        
+
         return True
 
     def noSucessor(self, apaga):
         paiDoSucessor = apaga
         sucessor = apaga
         atual = apaga.direito
-        
+
         while atual != None:
             paiDoSucessor = sucessor
             sucessor = atual
             atual = atual.esquerdo
-            
+
         if sucessor != apaga.direito:
             paiDoSucessor.esquerdo = sucessor.direito
             sucessor.direito = apaga.direito
-        
+
         return sucessor
 
     def buscar(self, elemento):
@@ -114,7 +126,7 @@ class ArvoreBinaria:
             if atual == None:
                 return None
         return atual.elemento
-    
+
     def grau(self, elemento):
         atual = self.get_elemento(elemento)
         if atual:
@@ -125,8 +137,8 @@ class ArvoreBinaria:
             else:
                 return 2
         else:
-             return
-    
+            return
+
     def profundidade(self, elemento):
         atual = self.get_elemento(elemento)
         profundidade = 0
@@ -135,7 +147,7 @@ class ArvoreBinaria:
             profundidade += 1
             ancestral = ancestral.pai
         return profundidade
-    
+
     def altura(self, elemento):
         if elemento == None or elemento.esquerdo == None and elemento.direito == None:
             return 0
@@ -144,17 +156,17 @@ class ArvoreBinaria:
                 return 1 + self.altura(elemento.esquerdo)
             else:
                 return 1 + self.altura(elemento.direito)
-    
+
     def altura_(self, elemento):
         atual = self.get_elemento(elemento)
         if atual == None or atual.esquerdo == None and atual.direito == None:
             return 0
         else:
             if self.altura(atual.esquerdo) > self.altura(atual.direito):
-                return  1 + self.altura(atual.esquerdo)
+                return 1 + self.altura(atual.esquerdo)
             else:
-                return  1 + self.altura(atual.direito) 
-    
+                return 1 + self.altura(atual.direito)
+
     def nivel(self, elemento):
         atual = self.get_elemento(elemento)
         if atual:
@@ -165,7 +177,7 @@ class ArvoreBinaria:
             return 0
         else:
             return 1 + self.quantidadeNos(elemento.esquerdo) + self.quantidadeNos(elemento.direito)
-    
+
     def get_elemento(self, elemento):
         if self.raiz == None:
             return None
@@ -178,25 +190,25 @@ class ArvoreBinaria:
             if atual == None:
                 return None
         return atual
-    
+
     def inOrder(self, elemento):
         if elemento != None:
             self.inOrder(elemento.esquerdo)
-            print(elemento.elemento,end=" ")
+            print(elemento.elemento, end=" ")
             self.inOrder(elemento.direito)
-    
+
     def preOrder(self, elemento):
         if elemento != None:
-            print(elemento.elemento,end=" ")
+            print(elemento.elemento, end=" ")
             self.preOrder(elemento.esquerdo)
             self.preOrder(elemento.direito)
-    
+
     def posOrder(self, elemento):
         if elemento != None:
             self.posOrder(elemento.esquerdo)
             self.posOrder(elemento.direito)
-            print(elemento.elemento,end=" ")
-    
+            print(elemento.elemento, end=" ")
+
     def get_arvore(self, elemento):
         atual = self.get_elemento(elemento)
         espacos = " " * atual.nivel * 2
