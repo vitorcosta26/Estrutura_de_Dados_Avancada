@@ -1,6 +1,5 @@
 from no import No
 
-
 class ArvoreBinaria:
     def __init__(self):
         self.raiz = No(None, None, None, None, None)
@@ -236,3 +235,24 @@ class ArvoreBinaria:
                 self.get_arvore(atual.esquerdo.elemento)
             elif atual.direito != None:
                 self.get_arvore(atual.direito.elemento)
+    
+    def inserir_sequencia(self, sequencia):
+        
+        for elemento in sequencia:
+            self.inserir(elemento)
+    
+    def inserir_sequencia_PosOrdem(self, sequencia):
+        """
+        Em uma sequência Pós Ordem o último elemento da mesma é a raiz da árvore,
+        e fazemos a inserção dos elementos na ordem inversa (partindo do fim da lista).
+        """
+        for elemento in sequencia[::-1]:
+            self.inserir(elemento)
+
+    def inserir_sequencia_PreOrdem(self, sequencia):
+        """
+        Em uma sequência Pré Ordem o primeiro elemento da mesma é a raiz da árvore,
+        e fazemos a inserção dos elementos na ordem correta (partindo do início da lista).
+        """
+        for elemento in sequencia:
+            self.inserir(elemento)
