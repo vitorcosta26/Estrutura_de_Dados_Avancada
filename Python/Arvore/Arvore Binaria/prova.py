@@ -12,6 +12,10 @@ print("\nPre Order")
 arvore.preOrder(arvore.raiz)
 print("\n")
 
+#Fizemos as inserções baseadas na Pós Ordem e na Pré Ordem.
+#A partir dos dados obtidos pela árvore acima.
+
+#inserir_sequencia_PosOrdem
 posOrdem = [7, 5, 9, 8, 13, 20, 18, 10]
 arvorePos = ArvoreBinaria()
 arvorePos.inserir_sequencia_PosOrdem(posOrdem)
@@ -24,6 +28,7 @@ print("\nPre Order")
 arvorePos.preOrder(arvorePos.raiz)
 print("\n")
 
+#inserir_sequencia_PreOrdem
 preOrdem = [10, 8, 5, 7, 9, 18, 13, 20]
 arvorePre = ArvoreBinaria()
 arvorePre.inserir_sequencia_PreOrdem(preOrdem)

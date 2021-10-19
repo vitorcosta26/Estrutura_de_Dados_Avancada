@@ -1,4 +1,4 @@
-from No import No
+from no import No
 
 class ArvoreBinaria:
     def __init__(self):
@@ -241,6 +241,21 @@ class ArvoreBinaria:
         for elemento in sequencia:
             self.inserir(elemento)
     
+    def inserir_sequencia_EmOrdem(self, sequencia, raiz):
+        
+        subarvore_esquerda = sequencia[raiz:]
+        subarvore_direita = sequencia[:raiz]
+        subarvore_direita.remove(raiz)
+
+        self.inserir(raiz)
+
+        for elemento in subarvore_esquerda:
+            self.inserir(elemento)
+        
+        for elemento in subarvore_direita:
+            self.inserir(elemento)
+    
+    #Métodos da prova
     def inserir_sequencia_PosOrdem(self, sequencia):
         """
         Em uma sequência Pós Ordem o último elemento da mesma é a raiz da árvore,
