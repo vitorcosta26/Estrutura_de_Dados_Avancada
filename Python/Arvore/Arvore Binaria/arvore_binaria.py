@@ -236,6 +236,7 @@ class ArvoreBinaria:
             elif atual.direito != None:
                 self.get_arvore(atual.direito.elemento)
     
+    #Métodos da prova
     def inserir_sequencia(self, sequencia):
         
         for elemento in sequencia:
@@ -255,7 +256,6 @@ class ArvoreBinaria:
         for elemento in subarvore_direita:
             self.inserir(elemento)
     
-    #Métodos da prova
     def inserir_sequencia_PosOrdem(self, sequencia):
         """
         Em uma sequência Pós Ordem o último elemento da mesma é a raiz da árvore,
