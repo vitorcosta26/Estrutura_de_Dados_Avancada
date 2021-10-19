@@ -40,3 +40,16 @@ arvorePre.posOrder(arvorePre.raiz)
 print("\nPre Order")
 arvorePre.preOrder(arvorePre.raiz)
 print("\n")
+
+#Exemplo prova
+emOrdem = [1, 5, 8, 9]
+arvore = ArvoreBinaria()
+arvore.inserir_sequencia_EmOrdem(emOrdem, 5)
+arvore.get_arvore(arvore.get_raiz())
+print("\nIn Order")
+arvore.inOrder(arvore.raiz)
+print("\nPos Order")
+arvore.posOrder(arvore.raiz)
+print("\nPre Order")
+arvore.preOrder(arvore.raiz)
+print("\n")
